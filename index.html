@@ -700,9 +700,31 @@
     <div class="two-col">
 
       <div>
-        <div class="col-label">Personas Tested</div>
+        <div class="col-label" style="display:flex;align-items:center;gap:10px;">MVP Personas <span style="font-size:9px;font-weight:600;letter-spacing:1.5px;color:var(--bg);background:var(--green);padding:2px 8px;border-radius:4px;">HACKATHON</span></div>
 
-        <div class="persona-group">
+        <div class="persona-group" style="border-left:3px solid var(--green);">
+          <div class="persona-group-header">
+            <div class="p-icon" style="width:32px;height:32px;font-size:16px;border-radius:8px;background:linear-gradient(135deg,var(--green),#065F46);"><i data-lucide="shield-check"></i></div>
+            <div class="persona-group-title">Visitor Management</div>
+          </div>
+          <div class="persona-tags">
+            <span class="ptag">VIP Visitor Reg Admin</span>
+            <span class="ptag">Visitor Reg Admin</span>
+            <span class="ptag">Visitor Reg Coordinator</span>
+            <span class="ptag">Visitor Reg Host</span>
+            <span class="ptag">Building Guard</span>
+            <span class="ptag">Security Admin</span>
+          </div>
+        </div>
+
+        <div class="note-box" style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="flex-shrink:0;margin-top:1px;color:var(--green);"><i data-lucide="key-round" style="width:14px;height:14px;stroke:currentColor;fill:none;"></i></div>
+          <div>Each persona has a dedicated test account. The agent authenticates as the relevant role, re-injects the Amplify override, and verifies every role sees exactly what it should — and nothing it shouldn't.</div>
+        </div>
+
+        <div class="col-label" style="display:flex;align-items:center;gap:10px;margin-top:20px;">V2 Personas <span style="font-size:9px;font-weight:600;letter-spacing:1.5px;color:var(--bg);background:var(--muted);padding:2px 8px;border-radius:4px;">NEXT</span></div>
+
+        <div class="persona-group" style="opacity:0.5;border-left:3px solid var(--muted);">
           <div class="persona-group-header">
             <div class="p-icon" style="width:32px;height:32px;font-size:16px;border-radius:8px;background:linear-gradient(135deg,var(--purple),#4F46E5);"><i data-lucide="building-2"></i></div>
             <div class="persona-group-title">Building Admin</div>
@@ -713,42 +735,22 @@
             <span class="ptag">User Admin</span>
             <span class="ptag">Programmer</span>
             <span class="ptag">Operator</span>
-            <span class="ptag">Security Admin</span>
-            <span class="ptag">Building Guard</span>
           </div>
         </div>
 
-        <div class="persona-group">
+        <div class="persona-group" style="opacity:0.5;border-left:3px solid var(--muted);">
           <div class="persona-group-header">
-            <div class="p-icon" style="width:32px;height:32px;font-size:16px;border-radius:8px;background:linear-gradient(135deg,var(--cyan),#0284C7);"><i data-lucide="shield-check"></i></div>
-            <div class="persona-group-title">Tenant Admin</div>
+            <div class="p-icon" style="width:32px;height:32px;font-size:16px;border-radius:8px;background:linear-gradient(135deg,var(--cyan),#0284C7);"><i data-lucide="users"></i></div>
+            <div class="persona-group-title">Tenant Admin & User</div>
           </div>
           <div class="persona-tags">
             <span class="ptag">System Manager</span>
-            <span class="ptag">VIP Visitor Reg Admin</span>
-            <span class="ptag">Visitor Reg Admin</span>
-            <span class="ptag">Visitor Reg Coordinator</span>
-            <span class="ptag">Visitor Reg Host</span>
-          </div>
-        </div>
-
-        <div class="persona-group">
-          <div class="persona-group-header">
-            <div class="p-icon" style="width:32px;height:32px;font-size:16px;border-radius:8px;background:linear-gradient(135deg,var(--green),#065F46);"><i data-lucide="user"></i></div>
-            <div class="persona-group-title">Tenant User</div>
-          </div>
-          <div class="persona-tags">
             <span class="ptag">Building Tenant</span>
             <span class="ptag">Mobile Access User</span>
             <span class="ptag">Work Order Requester</span>
             <span class="ptag">Resource Reserver</span>
             <span class="ptag">Guest User</span>
           </div>
-        </div>
-
-        <div class="note-box" style="display:flex;align-items:flex-start;gap:10px;">
-          <div style="flex-shrink:0;margin-top:1px;color:var(--green);"><i data-lucide="key-round" style="width:14px;height:14px;stroke:currentColor;fill:none;"></i></div>
-          <div>Each persona has a dedicated test account. The agent authenticates as the relevant role, re-injects the Amplify override, and verifies every role sees exactly what it should — and nothing it shouldn't.</div>
         </div>
       </div>
 
@@ -783,6 +785,10 @@
             <div class="val-title">Copy Tone & Empty States</div>
             <div class="val-desc">Address as "You / Your" · Present tense · Missing data → "-" · Not applicable → "N/A"</div>
           </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;margin-top:10px;padding:0 4px;">
+          <div style="font-size:15px;font-weight:700;color:var(--purple);white-space:nowrap;">+ more</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.5;">Checks consistency across the product based on our shared <span style="color:rgba(255,255,255,0.65);">@hqo/*</span> packages and design system standards</div>
         </div>
       </div>
     </div>
