@@ -43,6 +43,7 @@
       padding: 88px 72px 68px;
       opacity: 0;
       pointer-events: none;
+      overflow-y: auto;
       transition: opacity 0.55s cubic-bezier(.4,0,.2,1),
                   transform 0.55s cubic-bezier(.4,0,.2,1);
     }
@@ -465,14 +466,89 @@
     .t-desc { font-size: 17px; color: rgba(255,255,255,0.5); line-height: 1.7; }
 
     /* ══════════════════════════════════════════════
-       SLIDE 8 — DEMO
+       SLIDE 7 — WHAT IT FOUND
     ══════════════════════════════════════════════ */
-    #s8 {
+    #s7 { background: var(--bg); }
+
+    .found-stats-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px; margin-bottom: 18px;
+    }
+    .found-stat {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+    }
+    .found-stat-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; margin-bottom: 4px;
+    }
+    .found-stat-value {
+      font-size: 44px; font-weight: 900; letter-spacing: -2px;
+      color: white; line-height: 1; margin-bottom: 4px;
+    }
+    .found-stat-desc {
+      font-size: 13px; color: var(--muted); line-height: 1.4;
+    }
+
+    .found-cols {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px; flex: 1; align-content: start;
+    }
+    .found-col-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--muted);
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+    .found-row {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 10px 16px;
+      margin-bottom: 6px;
+    }
+    .found-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .found-row-text {
+      font-size: 13.5px; color: rgba(255,255,255,0.75);
+      line-height: 1.45; flex: 1;
+    }
+    .found-row-text strong { color: white; font-weight: 600; }
+    .found-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 3px 10px;
+      border-radius: 5px; white-space: nowrap; flex-shrink: 0;
+    }
+    .fb-tickets {
+      color: var(--purple); background: rgba(139,92,246,0.12);
+      border: 1px solid rgba(139,92,246,0.2);
+    }
+    .fb-ux {
+      color: var(--amber); background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.2);
+    }
+    .fb-console {
+      color: var(--cyan); background: rgba(34,211,238,0.12);
+      border: 1px solid rgba(34,211,238,0.2);
+    }
+    .found-row-sub {
+      font-size: 11.5px; color: var(--muted); line-height: 1.35; margin-top: 2px;
+    }
+
+    /* ══════════════════════════════════════════════
+       SLIDE 9 — DEMO
+    ══════════════════════════════════════════════ */
+    #s9 {
       background: var(--bg);
       justify-content: center; align-items: center;
       padding: 0;
     }
-    #s8::before {
+    #s9::before {
       content: '';
       position: absolute; inset: 0;
       background: radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.14) 0%, transparent 65%);
@@ -852,8 +928,135 @@
     <div class="slide-foot-num">6</div>
   </div>
 
-  <!-- ═══════ SLIDE 7 · WHAT'S NEXT ═══════ -->
+  <!-- ═══════ SLIDE 7 · WHAT IT FOUND ═══════ -->
   <div class="slide" id="s7">
+    <div class="eyebrow">Real World Results</div>
+    <div class="h1" style="margin-bottom:20px;">What It <span>Found</span></div>
+
+    <div class="found-stats-row">
+      <div class="found-stat">
+        <div class="found-stat-label" style="color:var(--green);">AC Regressions</div>
+        <div class="found-stat-value" style="color:var(--green);">0</div>
+        <div class="found-stat-desc">Every feature shipped correctly</div>
+      </div>
+      <div class="found-stat">
+        <div class="found-stat-label" style="color:var(--purple);">Unique Bugs Filed</div>
+        <div class="found-stat-value">13</div>
+        <div class="found-stat-desc">Convention, UX & technical</div>
+      </div>
+      <div class="found-stat">
+        <div class="found-stat-label" style="color:var(--cyan);">Tickets Tested</div>
+        <div class="found-stat-value">9</div>
+        <div class="found-stat-desc">In 48 hrs, fully autonomous</div>
+      </div>
+      <div class="found-stat">
+        <div class="found-stat-label" style="color:var(--red);">Clean Passes</div>
+        <div class="found-stat-value">1</div>
+        <div class="found-stat-desc">VIS-740 — zero issues found</div>
+      </div>
+    </div>
+
+    <div class="found-cols">
+      <div>
+        <div class="found-col-label">Systemic — Found Across Multiple Tickets</div>
+
+        <div class="found-row">
+          <div class="found-dot" style="background:var(--amber);"></div>
+          <div class="found-row-text">"Add service request" → "Create service request"</div>
+          <div class="found-badge fb-tickets">8 Tickets</div>
+        </div>
+        <div class="found-row">
+          <div class="found-dot" style="background:var(--amber);"></div>
+          <div class="found-row-text">Search placeholder — "Search" not "Search by {criterion}"</div>
+          <div class="found-badge fb-tickets">8 Tickets</div>
+        </div>
+        <div class="found-row">
+          <div class="found-dot" style="background:var(--amber);"></div>
+          <div class="found-row-text">Status pills missing dot prefix — "New" not "• New"</div>
+          <div class="found-badge fb-tickets">4 Tickets</div>
+        </div>
+        <div class="found-row">
+          <div class="found-dot" style="background:var(--amber);"></div>
+          <div class="found-row-text">"Date & Time", "Issue Type" — Title Case in sentence-case context</div>
+          <div class="found-badge fb-tickets">3 Tickets</div>
+        </div>
+        <div class="found-row">
+          <div class="found-dot" style="background:var(--amber);"></div>
+          <div class="found-row-text">Em dash "—" used instead of hyphen "-" for missing data</div>
+          <div class="found-badge fb-tickets">2 Tickets</div>
+        </div>
+        <div class="found-row">
+          <div class="found-dot" style="background:var(--amber);"></div>
+          <div class="found-row-text">AM/PM uppercase in body text — should be lowercase am/pm</div>
+          <div class="found-badge fb-tickets">2 Tickets</div>
+        </div>
+        <div class="found-row">
+          <div class="found-dot" style="background:var(--amber);"></div>
+          <div class="found-row-text">"Experience channels" → "Experience Channels" (nav casing)</div>
+          <div class="found-badge fb-tickets">1 Ticket</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="found-col-label">Functional & Technical</div>
+
+        <div class="found-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+          <div style="display:flex;align-items:center;gap:12px;width:100%;">
+            <div class="found-dot" style="background:var(--red);"></div>
+            <div class="found-row-text" style="flex:1;"><strong>No unsaved changes warning on back navigation</strong></div>
+            <div class="found-badge fb-ux">UX</div>
+          </div>
+          <div class="found-row-sub" style="padding-left:19px;">Fill form → browser back = silent data loss</div>
+        </div>
+        <div class="found-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+          <div style="display:flex;align-items:center;gap:12px;width:100%;">
+            <div class="found-dot" style="background:var(--red);"></div>
+            <div class="found-row-text" style="flex:1;"><strong>Validation error on a disabled field</strong></div>
+            <div class="found-badge fb-ux">UX</div>
+          </div>
+          <div class="found-row-sub" style="padding-left:19px;">"Status is required" on a field the user can't touch</div>
+        </div>
+        <div class="found-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+          <div style="display:flex;align-items:center;gap:12px;width:100%;">
+            <div class="found-dot" style="background:var(--red);"></div>
+            <div class="found-row-text" style="flex:1;"><strong>Activity log & Internal Notes need page refresh</strong></div>
+            <div class="found-badge fb-ux">UX</div>
+          </div>
+          <div class="found-row-sub" style="padding-left:19px;">Cancel request → log doesn't update until reload</div>
+        </div>
+        <div class="found-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+          <div style="display:flex;align-items:center;gap:12px;width:100%;">
+            <div class="found-dot" style="background:var(--red);"></div>
+            <div class="found-row-text" style="flex:1;"><strong>Detail page date format inconsistent with list</strong></div>
+            <div class="found-badge fb-ux">UX</div>
+          </div>
+          <div class="found-row-sub" style="padding-left:19px;">List: 04/16/2026 · Detail: "April 16, 2026 at 7:18 AM"</div>
+        </div>
+        <div class="found-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+          <div style="display:flex;align-items:center;gap:12px;width:100%;">
+            <div class="found-dot" style="background:var(--cyan);"></div>
+            <div class="found-row-text" style="flex:1;"><strong>404 on default_avatar.png — relative path bug</strong></div>
+            <div class="found-badge fb-console">Console</div>
+          </div>
+          <div class="found-row-sub" style="padding-left:19px;">Fires on every service request detail load, 3 tickets</div>
+        </div>
+        <div class="found-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+          <div style="display:flex;align-items:center;gap:12px;width:100%;">
+            <div class="found-dot" style="background:var(--cyan);"></div>
+            <div class="found-row-text" style="flex:1;"><strong>403 on companies API endpoint</strong></div>
+            <div class="found-badge fb-console">Console</div>
+          </div>
+          <div class="found-row-sub" style="padding-left:19px;">GET /api/apps/buildings/{uuid}/companies/{uuid}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">©HqO. All rights reserved.</div>
+    <div class="slide-foot-num">7</div>
+  </div>
+
+  <!-- ═══════ SLIDE 8 · WHAT'S NEXT ═══════ -->
+  <div class="slide" id="s8">
     <div class="eyebrow">If We Had More Time</div>
     <div class="h1" style="margin-bottom:32px;">What's <span>Next</span></div>
 
@@ -879,11 +1082,11 @@
 
     </div>
     <div class="slide-foot">©HqO. All rights reserved.</div>
-    <div class="slide-foot-num">7</div>
+    <div class="slide-foot-num">8</div>
   </div>
 
-  <!-- ═══════ SLIDE 8 · DEMO ═══════ -->
-  <div class="slide" id="s8">
+  <!-- ═══════ SLIDE 9 · DEMO ═══════ -->
+  <div class="slide" id="s9">
     <div class="demo-ring ring1"></div>
     <div class="demo-ring ring2"></div>
     <div class="demo-ring ring3"></div>
@@ -893,7 +1096,7 @@
       <div class="demo-sub">Watch bug-ledger run a real Prod Review ticket end to end</div>
     </div>
     <div class="slide-foot">©HqO. All rights reserved.</div>
-    <div class="slide-foot-num">8</div>
+    <div class="slide-foot-num">9</div>
   </div>
 
 </div><!-- /deck -->
